@@ -42,6 +42,9 @@ Right-click for a context menu with zoom / rotate / bring-to-front / reset actio
 | Firefox | [addons.mozilla.org/firefox/addon/outzoom](https://addons.mozilla.org/firefox/addon/outzoom/) |
 | Chrome  | Download zip from [Releases](../../releases), unzip → `chrome://extensions` → Developer mode → Load unpacked |
 
+> [!TIP]
+> Firefox users can also download the `.zip` directly from [Releases](../../releases) and load it manually via `about:debugging` → This Firefox → Load Temporary Add-on.
+
 ### Develop
 
 Requires Node.js. The toolchain is [WXT](https://wxt.dev).
@@ -106,6 +109,9 @@ Original extension by Konrad Papała (kpion) — [kpion/inzoom](https://github.c
 |---------|--------|
 | Firefox | [addons.mozilla.org/firefox/addon/outzoom](https://addons.mozilla.org/firefox/addon/outzoom/) |
 | Chrome  | Скачай zip из [Releases](../../releases), распакуй → `chrome://extensions` → Режим разработчика → Загрузить распакованное |
+
+> [!TIP]
+> Пользователи Firefox также могут скачать `.zip` напрямую из [Releases](../../releases) и загрузить вручную через `about:debugging` → This Firefox → Load Temporary Add-on.
 
 ### Разработка
 
