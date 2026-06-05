@@ -1,0 +1,11 @@
+/.local/
+/project.code-workspace
+/src/web-ext-artifacts
+node_modules/
+.output/
+.wxt/
+.claude/
+.iconpng/
+*.zip
+stats.html
+outzoom-source.zip

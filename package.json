@@ -1,0 +1,22 @@
+{
+  "name": "outzoom",
+  "version": "1.0.1",
+  "description": "Zoom in and out on images and videos using shift + mouse wheel and by other ways. Modern Manifest V3 fork of kpion/inzoom.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/tglagcs/outzoom",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "wxt prepare && tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "wxt": "^0.20.0"
+  }
+}

@@ -1,0 +1,139 @@
+/*
+only if 'dragging' is 'on' in options.
+*/
+.outzoom-draggable {
+  cursor: -webkit-grab;
+  cursor: grab;
+  /* stop the browser's own image drag and text selection while dragging */
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/*
+when the element is being dragged
+*/
+.outzoom-dragging {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* ***************************************************
+    Lightbox overlay — "bring to front" action
+*/
+
+.outzoom-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outzoom-lightbox-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: visible;
+}
+
+.outzoom-lightbox-content img,
+.outzoom-lightbox-content video {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.outzoom-lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  z-index: 1;
+}
+
+.outzoom-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ***************************************************
+    Modal dialog (properties)
+    based on https://codepen.io/TomJ1588/pen/raOmRK
+*/
+
+/* defaults + when turned off */
+.outzoomModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  background: #fff;
+  border-radius: 4px;
+  transform: translate(-50%, -150%);
+  transition: all 0.2s ease-in-out;
+  perspective: 1000;
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  opacity: 0;
+}
+
+/* when turned on */
+.outzoomModal.outzoomModalOn {
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0.1s;
+  z-index: 9999;
+  opacity: 1;
+}
+
+/* close button */
+.outzoomModal .outzoomModalClose {
+  float: right;
+  text-decoration: none;
+  padding: 22px 22px;
+  color: #424242;
+  font-weight: 800;
+  transition: all 0.5s;
+  z-index: +1;
+  background: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 0 4px 0 0;
+}
+
+.outzoomModal .outzoomModalClose:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.outzoomModal h3 {
+  margin: 0;
+  padding: 20px;
+  display: block;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  text-transform: uppercase;
+  background: rgba(2, 162, 239, 1);
+  color: #fff;
+  border-radius: 4px 4px 0 0;
+}
+
+.outzoomModal .outzoomModalContent {
+  padding: 10px;
+}

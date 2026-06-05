@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- open the options page in a full browser tab (upstream behaviour) -->
+    <meta name="manifest.open_in_tab" content="true" />
+    <title>OutZoom options</title>
+  </head>
+  <body>
+    <header>
+      <section class="container">
+        <div class="header-inner">
+          <div>
+            <h1>OutZoom</h1>
+            <div class="subtitle" data-i18n="subtitle">Tests &amp; Configuration</div>
+          </div>
+          <div class="header-right">
+            <a href="https://github.com/tglagcs/outzoom" data-i18n="homeLink">Home page &amp; Source</a>
+            <button class="lang-toggle" id="langToggle">RU</button>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main class="wrapper">
+      <section class="container" id="tests">
+        <h2 data-i18n="testsH2">Tests area</h2>
+
+        <p class="note" data-i18n="testsNote">
+          Hover mouse over the video or image, press the modifier key(s) and use
+          mouse wheel to zoom in or out.
+          <br /><br />
+          Hold <kbd>Shift</kbd> and drag to reposition the element (for a video
+          this also keeps the player's own controls working when Shift is not
+          held).
+          <br /><br />
+          Press <kbd>Escape</kbd> while hovering over an element to reset it to
+          its original size and position.
+        </p>
+
+        <div class="test-grid">
+          <div class="test-media" style="width: 366px; height: 200px;">
+            <img
+              src="/test_photo.jpeg"
+              style="width: 100%; height: 100%; object-fit: cover;"
+            />
+          </div>
+
+          <div class="test-media">
+            <video
+              width="366"
+              height="200"
+              controls
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              src="/sample.mp4"
+            ></video>
+          </div>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2 data-i18n="configH2">Configuration</h2>
+        <form id="config">
+          <fieldset>
+            <h3 data-i18n="h3ZoomModifiers">Zoom Modifiers</h3>
+            <div class="subsection">
+              <div class="shortcut-box">
+                <label class="label-inline"
+                  ><input type="checkbox" name="zoom.modifiers.shift" /><kbd>Shift</kbd></label
+                >
+                <label class="label-inline"
+                  ><input type="checkbox" name="zoom.modifiers.ctrl" /><kbd>Ctrl</kbd></label
+                >
+                <label class="label-inline"
+                  ><input type="checkbox" name="zoom.modifiers.alt" /><kbd>Alt</kbd></label
+                >
+              </div>
+              <div class="shortcut-box" style="margin-top: 8px;">
+                <label class="label-inline"><span data-i18n="labelExtraTrigger">Extra trigger:</span>&nbsp;<select class="extra-trigger-key" name="zoom.modifiers.extraKey"></select></label>
+              </div>
+              <p class="note" data-i18n="noteZoomModifiers">
+                Remember to <b>not</b> choose keys which already do something on
+                your system, as this extension will probably not even get the
+                notification.<br />
+                E.g. on KDE alt key and mouse actions are reserved for windows
+                moving/resizing. This is a pretty common issue being reported.
+              </p>
+            </div>
+
+            <h3 data-i18n="h3Wheel">Wheel</h3>
+            <div class="subsection">
+              <label
+                ><input type="checkbox" name="zoom.wheel.direction" value="1" /><span data-i18n="labelReverseDirection">Reverse direction</span></label
+              >
+            </div>
+
+            <h3 data-i18n="h3ZoomPosition">Zoom position</h3>
+            <div class="subsection">
+              <label
+                ><input type="checkbox" name="zoom.wheel.zoomToCursor" /><span data-i18n="labelZoomToCursor">Zoom toward cursor (like Windows Photo Viewer)</span></label
+              >
+              <p class="note" style="margin-top: .6rem;" data-i18n="noteZoomPosition">
+                When enabled, the point under the cursor stays fixed while zooming.
+                By default the element's center is used as the zoom origin.
+              </p>
+            </div>
+
+            <h3 data-i18n="h3Dragging">Dragging</h3>
+            <div class="subsection">
+              <label><input type="checkbox" name="dragging.enabled" /><span data-i18n="labelEnableDragging">Enable dragging</span></label>
+              <p class="note" style="margin-top: .6rem;" data-i18n="noteDragging">
+                After you zoom in/out an element, it becomes draggable so you can
+                reposition it within its container.
+              </p>
+            </div>
+
+            <h3 data-i18n="h3KeyboardZoom">Keyboard zoom</h3>
+            <div class="subsection">
+              <label><input type="checkbox" name="keyboardZoom.enabled" /><span data-i18n="labelEnableKeyboardZoom">Enable keyboard zoom shortcuts</span></label>
+
+              <div class="shortcut-grid" style="margin-top: .8rem;">
+                <span class="shortcut-grid-label" data-i18n="shortcutZoomIn">Zoom in</span>
+                <label class="label-inline"><input type="checkbox" name="keyboardZoom.in.modifiers.shift" /><kbd>Shift</kbd></label>
+                <label class="label-inline"><input type="checkbox" name="keyboardZoom.in.modifiers.ctrl" /><kbd>Ctrl</kbd></label>
+                <label class="label-inline"><input type="checkbox" name="keyboardZoom.in.modifiers.alt" /><kbd>Alt</kbd></label>
+                <select class="shortcut-key" name="keyboardZoom.in.key"></select>
+
+                <span class="shortcut-grid-label" data-i18n="shortcutZoomOut">Zoom out</span>
+                <label class="label-inline"><input type="checkbox" name="keyboardZoom.out.modifiers.shift" /><kbd>Shift</kbd></label>
+                <label class="label-inline"><input type="checkbox" name="keyboardZoom.out.modifiers.ctrl" /><kbd>Ctrl</kbd></label>
+                <label class="label-inline"><input type="checkbox" name="keyboardZoom.out.modifiers.alt" /><kbd>Alt</kbd></label>
+                <select class="shortcut-key" name="keyboardZoom.out.key"></select>
+
+                <span class="shortcut-grid-label" data-i18n="shortcutReset">Reset</span>
+                <label class="label-inline"><input type="checkbox" name="keyboardZoom.reset.modifiers.shift" /><kbd>Shift</kbd></label>
+                <label class="label-inline"><input type="checkbox" name="keyboardZoom.reset.modifiers.ctrl" /><kbd>Ctrl</kbd></label>
+                <label class="label-inline"><input type="checkbox" name="keyboardZoom.reset.modifiers.alt" /><kbd>Alt</kbd></label>
+                <select class="shortcut-key" name="keyboardZoom.reset.key"></select>
+              </div>
+
+              <p class="note" style="margin-top: .6rem;" data-i18n="noteKeyboardZoom">
+                Zoom in, zoom out and reset using keyboard shortcuts instead of (or in addition to) the scroll wheel. Useful in fullscreen or on devices without a scroll wheel.
+              </p>
+            </div>
+
+            <h3 data-i18n="h3ContextMenu">Context menu</h3>
+            <div class="subsection">
+              <label
+                ><input type="checkbox" name="contextmenu.enabled" /><span data-i18n="labelContextMenu">Add context menu actions</span></label
+              >
+              <p class="note" style="margin-top: .6rem;" data-i18n="noteContextMenu">
+                Useful on Chrome/Opera and sites that override the default context menu
+                (e.g. YouTube on video elements).
+              </p>
+            </div>
+
+            <h3 data-i18n="h3Front">Bringing to front</h3>
+            <div class="subsection">
+              <div class="shortcut-box">
+                <label class="label-inline"
+                  ><input type="checkbox" name="front.modifiers.shift" /><kbd>Shift</kbd></label
+                >
+                <label class="label-inline"
+                  ><input type="checkbox" name="front.modifiers.ctrl" /><kbd>Ctrl</kbd></label
+                >
+                <label class="label-inline"
+                  ><input type="checkbox" name="front.modifiers.alt" /><kbd>Alt</kbd></label
+                >
+                <select class="shortcut-key" name="front.key"></select>
+              </div>
+              <label style="margin-top: .4rem;"><input type="checkbox" name="front.lightbox" /><span data-i18n="labelLightbox">Open in lightbox overlay</span></label>
+              <p class="note" style="margin-top: .6rem;" data-i18n="noteFront">
+                While hovering over a covered image, press this shortcut to bring it
+                to the front.
+                When lightbox is enabled the element opens in a fullscreen overlay that works on any site.
+              </p>
+            </div>
+
+            <h3 data-i18n="h3ZoomFront">Alternative zooming: zoom in and bring to front</h3>
+            <div class="subsection">
+              <label><input type="checkbox" name="zoomFront.enabled" /><span data-i18n="labelZoomFrontEnable">Enable</span></label>
+              <div class="shortcut-box" style="margin-top: .6rem;">
+                <label class="label-inline"
+                  ><input type="checkbox" name="zoomFront.modifiers.shift" /><kbd>Shift</kbd></label
+                >
+                <label class="label-inline"
+                  ><input type="checkbox" name="zoomFront.modifiers.ctrl" /><kbd>Ctrl</kbd></label
+                >
+                <label class="label-inline"
+                  ><input type="checkbox" name="zoomFront.modifiers.alt" /><kbd>Alt</kbd></label
+                >
+                <select class="shortcut-key" name="zoomFront.key"></select>
+              </div>
+              <p class="note" style="margin-top: .6rem;" data-i18n="noteZoomFront">
+                While hovering over a covered image, press this shortcut to both zoom
+                in and bring it to the front.
+              </p>
+            </div>
+
+            <!-- dev stuff -->
+            <div class="only-in-dev-box">
+              <h3 data-i18n="h3Dev">Developer stuff</h3>
+              <div class="subsection">
+                <button type="button" id="reset-options" data-i18n="btnResetOptions">Reset to defaults</button>
+                <label
+                  ><input type="checkbox" name="contextmenu.tests" /><span data-i18n="labelTestsAction">Add 'tests' action</span></label
+                >
+                <button type="button" id="clear-options" data-i18n="btnClearOptions">Clear options</button>
+                <p class="note" data-i18n="noteDev">
+                  Probably useless, because this doesn't happen in real scenarios
+                </p>
+              </div>
+            </div>
+
+            <div class="message msg-inline msg-default success"></div>
+          </fieldset>
+        </form>
+      </section>
+
+      <section class="container">
+        <h3 data-i18n="h3Help">Help</h3>
+        <div class="subsection">
+          <p data-i18n="helpText">
+            Found a bug or have a suggestion? File an issue on
+            <a href="https://github.com/tglagcs/outzoom">github.com/tglagcs/outzoom</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

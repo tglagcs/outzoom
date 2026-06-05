@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --bg:      #18181b;
+        --surface: #27272a;
+        --border:  #3f3f46;
+        --text:    #f4f4f5;
+        --muted:   #a1a1aa;
+        --accent:  #818cf8;
+        --hover:   #3f3f46;
+        --font:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      }
+
+      body {
+        width: 220px;
+        background: var(--bg);
+        font-family: var(--font);
+      }
+
+      ul.vmenu {
+        list-style: none;
+        padding: 4px 0;
+      }
+
+      ul.vmenu li + li {
+        border-top: 1px solid var(--border);
+      }
+
+      ul.vmenu li a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0 16px;
+        height: 46px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .07em;
+        color: var(--muted);
+        transition: background .15s, color .15s;
+      }
+
+      ul.vmenu li a:hover {
+        background: var(--hover);
+        color: var(--text);
+      }
+
+      ul.vmenu li a::before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        background: center / contain no-repeat;
+        filter: brightness(0) invert(1);
+        opacity: .55;
+        transition: opacity .15s;
+      }
+
+      ul.vmenu li a:hover::before { opacity: .9; }
+
+      ul.vmenu li a.options::before {
+        background-image: url('/config.png');
+      }
+
+      ul.vmenu li a.home::before {
+        background-image: url('/home.png');
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="vmenu">
+      <li>
+        <a class="options" id="openOptions" href="#">Options</a>
+      </li>
+      <li>
+        <a
+          class="home"
+          data-url="https://github.com/tglagcs/outzoom"
+          href="https://github.com/tglagcs/outzoom"
+        >Home page &amp; source</a>
+      </li>
+    </ul>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
