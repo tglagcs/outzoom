@@ -8,7 +8,11 @@ Chrome: load unpacked from [Releases](../../releases)
 
 </div>
 
+<div align="center">
+
 [English](#english) · [Русский](#русский)
+
+</div>
 
 ---
 
