@@ -1,11 +1,9 @@
 <div align="center">
 
-# OutZoom
+# OutZoom &nbsp; [<img height="48" src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg">](https://addons.mozilla.org/firefox/addon/outzoom/)
 
 > Modern **Manifest V3** fork of [kpion/inzoom](https://github.com/kpion/inzoom),
 > rebuilt with TypeScript and [WXT](https://wxt.dev) for current Chrome and Firefox.
-
-[<img height="60" src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg">](https://addons.mozilla.org/firefox/addon/outzoom/)
 
 Chrome: load unpacked from [Releases](../../releases)
 
