@@ -1,11 +1,15 @@
+<div align="center">
+
 # OutZoom
 
 > Modern **Manifest V3** fork of [kpion/inzoom](https://github.com/kpion/inzoom),
 > rebuilt with TypeScript and [WXT](https://wxt.dev) for current Chrome and Firefox.
 
-[<img height="60" align="right" src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg">](https://addons.mozilla.org/firefox/addon/outzoom/)
+[<img height="60" src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg">](https://addons.mozilla.org/firefox/addon/outzoom/)
 
 Chrome: load unpacked from [Releases](../../releases)
+
+</div>
 
 Hover over an image or video, press <kbd>Shift</kbd> and use the mouse wheel to zoom
 in and out. Once zoomed, hold <kbd>Shift</kbd> and drag to reposition the element.
