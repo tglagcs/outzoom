@@ -1,8 +1,5 @@
 <div align="center">
-<table border="0" cellspacing="0" cellpadding="0"><tr>
-<td valign="middle"><h1>OutZoom</h1></td>
-<td valign="middle">&nbsp;&nbsp;<a href="https://addons.mozilla.org/firefox/addon/outzoom/"><img height="48" src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg"></a></td>
-</tr></table>
+<h1>OutZoom &nbsp; <a href="https://addons.mozilla.org/firefox/addon/outzoom/"><img src="https://blog.mozilla.org/addons/files/2020/04/get-the-addon-fx-apr-2020.svg" height="36"></a></h1>
 
 > Modern **Manifest V3** fork of [kpion/inzoom](https://github.com/kpion/inzoom),
 > rebuilt with TypeScript and [WXT](https://wxt.dev) for current Chrome and Firefox.
