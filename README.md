@@ -10,7 +10,7 @@ Chrome: load unpacked from [Releases](../../releases)
 
 <div align="center">
 
-[English](#english) · [Русский](#русский)
+🇬🇧 [English](#english) · 🇷🇺 [Русский](#русский)
 
 </div>
 
