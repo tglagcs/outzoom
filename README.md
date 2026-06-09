@@ -47,7 +47,7 @@ Right-click for a context menu with zoom / rotate / bring-to-front / reset actio
 | Chrome  | Download zip from [Releases](../../releases), unzip → `chrome://extensions` → Developer mode → Load unpacked |
 
 > [!TIP]
-> Firefox users can also download the `.xpi` directly from [Releases](../../releases) and install it manually via **Add-on Manager** → gear icon → Install Add-on From File.
+> Firefox users can also download the `.xpi` directly from [Releases](../../releases) and install it by dragging the file into any Firefox window.
 
 ### Develop
 
@@ -115,7 +115,7 @@ Original extension by Konrad Papała (kpion) — [kpion/inzoom](https://github.c
 | Chrome  | Скачай zip из [Releases](../../releases), распакуй → `chrome://extensions` → Режим разработчика → Загрузить распакованное |
 
 > [!TIP]
-> Пользователи Firefox также могут скачать `.xpi` напрямую из [Releases](../../releases) и установить вручную через **Менеджер дополнений** → иконка шестерёнки → Установить дополнение из файла.
+> Пользователи Firefox также могут скачать `.xpi` напрямую из [Releases](../../releases) и установить, просто перетащив файл в любое окно Firefox.
 
 ### Разработка
 
